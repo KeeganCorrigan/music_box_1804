@@ -1,6 +1,30 @@
-<h1>All Songs</h1>
+<header class="header-container">
+  <div class="logo">
+      <%= image_tag("raven.png", alt: "sweet bird") %>
+  </div>
+  <nav>
+      <ul>
+          <li><a title="Songs">Home</a></li>
+          <li><a class="active" title="Playlist">Playlist</a></li>
+          <li><a title="Artists">Artists</a></li>
+      </ul>
+  </nav>
+</header>
 
-<% @songs.each do |song| %>
-  <h2><%=song.title %></h2>
-  <p>Plays: <%=song.play_count%>
-<% end %>
+<h1>Songs</h1>
+
+<div class="song-container">
+  <% @songs.each do |song| %>
+  <div class="card">
+    <div class="card-header">
+      <p><%= song.artist.name %></p>
+    </div>
+    <div class="card-main">
+        <%= image_tag("dark_side_of_the_moon.png", alt: "prism-logo", class:"card-logo") %>
+      <div class="main-description">
+        <p><%= song.title %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

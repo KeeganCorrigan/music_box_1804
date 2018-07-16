@@ -1,0 +1,28 @@
+<main>
+  <h1> Create a Song</h1>
+  <div class="container">
+      <%= form_for [@artist, @song] do |f| %>
+      <div class="form-label top-label">
+      <%= f.label :name %>
+    </div>
+    <div class="form-field-top">
+      <%= f.text_field :title, class:"form-field" %>
+    </div>
+    <div class="form-label">
+      <%= f.label :length %>
+    </div>
+    <div class="form-field-top">
+      <%= f.text_field :length, class:"form-field" %>
+    </div>
+    <div class="form-label">
+      <%= f.label :play_count %>
+    </div>
+    <div class="form-field-top">
+      <%= f.text_field :play_count, class:"form-field" %>
+    </div>
+    <div>
+      <%= f.submit "Create song", class:"submit-button"%>
+    </div>
+  <% end %>
+  </div>
+</main>
